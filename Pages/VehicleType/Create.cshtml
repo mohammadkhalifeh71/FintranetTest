@@ -1,0 +1,14 @@
+@page
+@model Congestion.Pages.CreateVehicleTypeModel
+
+<h2>Create</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="VehicleType.Title" ></label>
+        <input asp-for="VehicleType.Title"  class="form-control" />
+        <span  asp-validation="VehicleType.Title" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

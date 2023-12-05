@@ -1,0 +1,15 @@
+@page "{id:int}"
+@model Congestion.Pages.EditVehicleModel
+
+<h2>Edit</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Vehicle.Id" />
+    <div class="form-group">
+        <label asp-for="Vehicle.Title" ></label>
+        <input asp-for="Vehicle.Title"  class="form-control" />
+        <span  class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

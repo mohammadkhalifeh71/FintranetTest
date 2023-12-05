@@ -1,0 +1,13 @@
+@page
+@model CreateTollModel
+
+@{
+Layout="~/Pages/Shared/_Layout.cshtml";
+
+}
+
+<div>
+    <select class="form-control" asp-for="VehicleTypes" asp-items="Model.VehicleTypes">
+        <option value="0">select</option>
+    </select>
+</div>

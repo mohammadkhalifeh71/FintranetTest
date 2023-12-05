@@ -1,0 +1,26 @@
+@page
+@model Congestion.Pages.CreateVehicleModel
+
+<h2>Create</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Vehicle.Title" ></label>
+        <input asp-for="Vehicle.Title"  class="form-control" />
+        <span  asp-validation="Vehicle.Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Vehicle.SSNNumber" ></label>
+        <input asp-for="Vehicle.SSNNumber"  class="form-control" />
+        <span  asp-validation="Vehicle.SSNNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Vehicle.VehicleType" ></label>
+        <select asp-for="VehicleTypes" asp-items="Model.VehicleTypes" id="">
+            <option value="0">select</option>
+        </select>
+       
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

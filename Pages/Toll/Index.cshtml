@@ -1,0 +1,36 @@
+@page
+@model Congestion.Pages.IndexTollModel
+
+<h2>Tolls</h2>
+
+<p>
+    <a asp-page="./Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>TaxFeeId</th>
+            <th>Vehicle</th>
+            <th>TollState</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Tolls)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.TaxFeeId</td>
+                <td>@item.VehicleId</td>
+                <td>@item.TollState</td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
