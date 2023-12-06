@@ -14,6 +14,9 @@ namespace Congestion.Persistence
             
         }
         public DbSet<TaxFeeRules> TaxFees { get; set; }
+        public DbSet<TaxFeeExemptionDates> TaxFeeExemptionDates { get; set; }
+        public DbSet<TaxFeeTimeRules> TaxFeeTimeRules { get; set; }
+        public DbSet<TaxFeeWeekExemptionRules> TaxFeeWeekExemptionRules { get; set; }
         public DbSet<Toll> Tolls { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<VehicleType> VehicleType { get; set; }

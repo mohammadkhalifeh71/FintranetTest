@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Congestion.Domain
 {
-    public class TaxFeeRules
+    public class TaxFeeTimeRules
     {
         public int Id { get; set; }
-        public List<TaxFeeWeekExemptionRules> TaxFeeWeekExemptionRules { get; set; }
-        public List<TaxFeeTimeRules> TaxFeeTimeRules { get; set; }
-        public List<TaxFeeExemptionDates> TaxFeeExemptionDates { get; set; }
         public string Title { get; set; }
+        public DateTime FromDate { get; set; }
+        public DateTime ToDate { get; set; }
+        public string Price { get; set; }
     }
 }

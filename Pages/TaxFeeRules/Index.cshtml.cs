@@ -3,26 +3,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Congestion.Pages
 {
-    public class IndexVehicleModel : PageModel
+    public class TaxFeeIndexRulesModel : PageModel
     {
         private readonly DataContext _context;
 
-        public IndexVehicleModel(DataContext context)
+        public TaxFeeIndexRulesModel(DataContext context)
         {
             _context = context;
         }
 
-        public IList<Congestion.Domain.Vehicle> Vehicles { get; set; }
+        public IList<Congestion.Domain.TaxFeeRules> TaxFeeRules { get; set; }
 
         public async Task OnGetAsync()
         {
-            Vehicles = await _context.Vehicles.ToListAsync();
-        
+            TaxFeeRules = await _context.TaxFees.ToListAsync();
         }
          public async Task<IActionResult> OnPostDeleteAsync(int? id)
         {
@@ -31,11 +29,11 @@ namespace Congestion.Pages
                 return NotFound();
             }
 
-            var VehicleById = await _context.Vehicles.FindAsync(id);
+            var TaxFeeRule = await _context.TaxFees.FindAsync(id);
 
-            if (VehicleById != null)
+            if (TaxFeeRule != null)
             {
-                _context.Vehicles.Remove(VehicleById);
+                _context.TaxFees.Remove(TaxFeeRule);
                 await _context.SaveChangesAsync();
             }
 
